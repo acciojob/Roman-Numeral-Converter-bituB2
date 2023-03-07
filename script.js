@@ -9,14 +9,14 @@ function convertToRoman(num) {
       6:['I', 1]
     };
 
-  let roman = "";
-  for (let i = 0; i < obj.length; i++) {
-    while (num >= obj[i][1]) {
-      roman += obj[i][0];
-      num -= obj[i][1];
+   let roman = "";
+  Object.keys(obj).forEach((key) => {
+    while (num >= obj[key][1]) {
+      roman += obj[key][0];
+      num -= obj[key][1];
     }
-  }
-	return roman;
+  });
+  return roman;
 }
 
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
